@@ -1,8 +1,11 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import User from '../classes/User';
+import { UserContext } from "../context/UserContext";
 
 const Register = () => {
   const navigate = useNavigate();
+  const {CheckUserRegisterDetails, users} = useContext(UserContext);
 
   // user details
   const [userName, setUserName] = useState("");
@@ -119,6 +122,9 @@ const Register = () => {
         <button
           onClick={(e) => {
             e.preventDefault();
+            let newUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
+            console.log(CheckUserRegisterDetails(newUser, passwordAgain));
+            console.log(users)
           }}
         >
           Create User
