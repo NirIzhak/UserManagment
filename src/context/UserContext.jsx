@@ -19,6 +19,7 @@ const UserContextProvider = ({ children }) => {
   const CheckUserRegisterDetails = (user, passwordAgain) => {
     if (!isValidEmail(user.email)) {
       alert("Email already used");
+      return false;
     }
     else if (
       isValidUserName(user.userName) &&
@@ -26,12 +27,17 @@ const UserContextProvider = ({ children }) => {
       isValidEmail(user.email) &&
       checkIfEmpty(user, passwordAgain)
     ) {
-      SetUsers([...users, user]);
+      SetUsers([...users, {...user}]);
+      alert(
+        "Register Succesfull"
+      );
+      return true
     }
     else {
       alert(
         "Check Your Details Again..."
       );
+      return false;
     }
   };
 
