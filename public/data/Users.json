@@ -1,0 +1,27 @@
+[
+    {
+        "userName": "Test1",
+        "password": "1234",
+        "image": "https://www.asc-csa.gc.ca/images/og-asc-200x267.png",
+        "firstName": "Test Name",
+        "lastName": "Test Last Name",
+        "email": "Test@gmail.com",
+        "date": "2016-02-12",
+        "city": "Test City",
+        "street": "Test Street",
+        "streetNum": 78
+    },
+    {
+        "userName": "Test2",
+        "password": "12654",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_CSA_mark.svg/640px-Logo_CSA_mark.svg.png",
+        "firstName": "Test Name 2",
+        "lastName": "Test Last Name 2",
+        "email": "Test2@gmail.com",
+        "date": "2013-02-14",
+        "city": "Test 2 City",
+        "street": "Tset 2 Street",
+        "streetNum": 89
+    }
+    
+]

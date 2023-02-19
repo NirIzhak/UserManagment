@@ -1,14 +1,27 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserContextProvider from "./context/UserContext";
+import Admin from "./pages/Admin";
+import EditDetails from "./pages/EditDetails";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import Register from "./pages/Register";
+import "./styles/App.css";
 
-function App() {
 
+const App = () => {
   return (
-    <div className="App">
-    <h1>Hey</h1>
-    <h2>bye</h2>
-    <h2>Its Work</h2>
-    </div>
-  )
-}
+    <UserContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/profile/:userName" element={<Profile />}></Route>
+          <Route path="/editDetails/:UserName" element={<EditDetails />}></Route>
+          <Route path="/admin" element={<Admin />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </UserContextProvider>
+  );
+};
 
-export default App
+export default App;
