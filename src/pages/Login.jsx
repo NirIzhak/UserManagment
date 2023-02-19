@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  // user input --> userName, password
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,6 +29,7 @@ const Login = () => {
         </label>
         <button
           onClick={(e) => {
+            // Function to check Details
             e.preventDefault();
           }}
         >

@@ -15,6 +15,7 @@ const UserContextProvider = ({ children }) => {
       console.error(err);
     }
   };
+  
   useEffect(() => {
     LoadUsers();
   }, []);

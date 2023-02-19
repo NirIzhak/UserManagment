@@ -44,7 +44,7 @@ const Register = () => {
           Password Again:
           <input
             type="password"
-            placeholder="password Agian"
+            placeholder="password Again"
             onChange={(e) => setPasswordAgain(e.target.value)}
           />
         </label>
@@ -87,11 +87,7 @@ const Register = () => {
         <label>
           {" "}
           Date Of Birth:
-          <input
-            type="date"
-            placeholder="birthday"
-            onChange={(e) => setDate(e.target.value)}
-          />
+          <input type="date" onChange={(e) => setDate(e.target.value)} />
         </label>
         <label>
           {" "}
@@ -116,7 +112,7 @@ const Register = () => {
           Street Number:
           <input
             type="number"
-            placeholder="street num"
+            placeholder="street number"
             onChange={(e) => setStreetNum(e.target.value)}
           />
         </label>
