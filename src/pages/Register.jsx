@@ -6,6 +6,7 @@ import { UserContext } from "../context/UserContext";
 const Register = () => {
 const navigate = useNavigate();
 const {
+  users,
   CheckUserRegisterDetails,
   setUserName,
   setPassword,
@@ -31,7 +32,7 @@ const {
   streetNum
 
 } = useContext(UserContext);
-
+console.log('users :>> ', users);
 // user details
 
 
