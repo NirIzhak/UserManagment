@@ -38,7 +38,7 @@ const Profile = ()=>{
         </div>
     </>
     :
-    alert("bye")
+    LogOut()
     )
 }
 export default Profile;
