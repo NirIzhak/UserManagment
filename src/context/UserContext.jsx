@@ -113,7 +113,9 @@ const checkIfEmpty = (user, passwordAgain) => {
 };
 
 
-//move to Registration route
+const createUser = ()=>{
+  console.log('users :>> ', users);
+}
 
 
 //check user login details
@@ -164,6 +166,7 @@ navigate(`/profile/${userName}`);
   const value = {
     users,
     SetUsers,
+    createUser,
     CheckUserRegisterDetails,
     CheckUserLogIn,
     userName, 
