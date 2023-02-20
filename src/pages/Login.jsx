@@ -1,13 +1,13 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 const Login = () => {
   const navigate = useNavigate();
   // user input --> userName, password
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
 
-
+  const {userName,setUserName,setPassword} = useContext(UserContext);
 
   return (
     <>
@@ -29,14 +29,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button
-          onClick={(e) => {
-            // Function to check Details
-            e.preventDefault();
-          }}
-        >
-          Log In
-        </button>
+        <button onClick={()=>navigate(`/profile/${userName}`)}>Log in</button>
       </form>
       <div className="register">
         <p>or</p>
