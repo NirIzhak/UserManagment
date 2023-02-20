@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import User from "../classes/User";
 
 const EditDetails = ()=>{
 const {
 users,
+SetUsers,
+LoadUsers,
 setUserName,
 setPassword,
 setPasswordAgain,
@@ -38,12 +39,18 @@ let user = users.find((u) => u.userName == userName);
 console.log('user :>> ', user);
 console.log('userIndex :>> ', userIndex);
 console.log('users :>> ', users);
-useEffect(() => {
 
-}, []);
+const createUser=(event)=>{
+  event.preventDefault();
+  const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
+  users[userIndex] = nUser;
+  console.log('user :>> ', nUser);
+  //SetUsers((Prev)=>[...Prev,user]);
+  
+}
 return(
 <>
-  <form className="edit-form">
+  <form className="edit-form" onSubmit={createUser}>
     <label>
       {" "}
       UserName:
@@ -110,13 +117,7 @@ return(
       <input type="number" value={streetNum} placeholder="street number" onChange={(e)=> setStreetNum(e.target.value)}
       />
     </label>
-    <button onClick={()=> {
-      let newUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
-      users[userIndex] = newUser;
-      }}
-      >
-      Update user
-    </button>
+    <button onClick={()=> createUser()}>Update user</button>
   </form>
   <div className="login">
     <p>or</p>
