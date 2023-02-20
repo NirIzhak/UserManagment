@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import User from "../classes/User";
 
 const EditDetails = ()=>{
 const {
@@ -111,11 +112,10 @@ return(
     </label>
     <button onClick={()=> {
       let newUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
-      CheckUserRegisterDetails(newUser, passwordAgain) ? navigate('/') : null;
       users[userIndex] = newUser;
       }}
       >
-      Create User
+      Update user
     </button>
   </form>
   <div className="login">
