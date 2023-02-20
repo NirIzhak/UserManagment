@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-
+import User from "../classes/User";
 export const UserContext = createContext();
 
 const UserContextProvider = ({ children }) => {
@@ -113,10 +113,6 @@ const checkIfEmpty = (user, passwordAgain) => {
 };
 
 
-const createUser = ()=>{
-  console.log('users :>> ', users);
-}
-
 
 //check user login details
 const CheckUserLogIn = (userName) => {
@@ -166,7 +162,6 @@ navigate(`/profile/${userName}`);
   const value = {
     users,
     SetUsers,
-    createUser,
     CheckUserRegisterDetails,
     CheckUserLogIn,
     userName, 
