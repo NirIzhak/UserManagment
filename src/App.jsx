@@ -7,7 +7,6 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import "./styles/App.css";
 
-
 const App = () => {
   return (
     <UserContextProvider>
