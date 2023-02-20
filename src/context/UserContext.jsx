@@ -5,6 +5,17 @@ export const UserContext = createContext();
 const UserContextProvider = ({ children }) => {
   const [users, SetUsers] = useState([]);
 
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordAgain, setPasswordAgain] = useState("");
+  const [image, setImage] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [date, setDate] = useState("");
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [streetNum, setStreetNum] = useState("");
   // load first users data
   const LoadUsers = async () => {
     try {
@@ -102,12 +113,14 @@ const checkIfEmpty = (user, passwordAgain) => {
 };
 
 
+//move to Registration route
 
-// // check user login details
-// const CheckUserLogIn = (userName, password) => {
-//   let user = users.find(
-//     (u) => u.userName == userName && u.password == password
-//   );
+
+//check user login details
+const CheckUserLogIn = (userName) => {
+navigate(`/profile/${userName}`);
+
+}
 
 //   if(userName == "admin" && password == "admin1234admin") navigate(`/manager/${userName}`);
 //   else if (user != undefined && userName != "admin")
@@ -152,6 +165,29 @@ const checkIfEmpty = (user, passwordAgain) => {
     users,
     SetUsers,
     CheckUserRegisterDetails,
+    CheckUserLogIn,
+    userName, 
+    setUserName,
+    password, 
+    setPassword,
+    passwordAgain, 
+    setPasswordAgain,
+    image, 
+    setImage,
+    firstName, 
+    setFirstName,
+    lastName, 
+    setLastName,
+    email, 
+    setEmail,
+    date, 
+    setDate,
+    city, 
+    setCity,
+    street, 
+    setStreet,
+    streetNum, 
+    setStreetNum
 
   };
 
