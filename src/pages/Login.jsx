@@ -20,7 +20,7 @@ const Login = () => {
   else if(user.userName == userName && user.password == password){
     navigate(`/profile/${userName}`);
   }
-  else if(user == undefined){
+  else{
     alert("Username and password are incorrect");
   }
   
