@@ -115,7 +115,7 @@ return(
       <input type="number" value={streetNum} placeholder="street number" onChange={(e)=> setStreetNum(e.target.value)}
       />
     </label>
-    <button onClick={(event)=> UpdateUser(event)}>Update user</button>
+    <button onClick={(event)=> UpdateUser(event)}>Save</button>
   </form>
   <div className="login">
     <p>or</p>
