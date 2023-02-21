@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import User from "../classes/User";
+
 export const UserContext = createContext();
 
 const UserContextProvider = ({ children }) => {
@@ -51,6 +51,7 @@ const UserContextProvider = ({ children }) => {
       return false;
     }
   };
+  
 
 
 
