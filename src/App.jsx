@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/profile/:userName" element={<Profile />}></Route>
           <Route path="/editDetails/:userName" element={<EditDetails />}></Route>
-          <Route path="/admin" element={<Admin />}></Route>
+          <Route path="/admin/:username" element={<Admin />}></Route>
         </Routes>
       </BrowserRouter>
     </UserContextProvider>
