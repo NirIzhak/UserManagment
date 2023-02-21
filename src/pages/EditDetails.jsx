@@ -7,8 +7,7 @@ import User from "../classes/User";
 const EditDetails = ()=>{
 const {
 users,
-SetUsers,
-LoadUsers,
+ReturnUser,
 setUserName,
 setPassword,
 setPasswordAgain,
@@ -34,17 +33,18 @@ streetNum
 } = useContext(UserContext);
 const {userName} = useParams();
 const navigate = useNavigate();
-let user = users.find((u) => u.userName == userName);
+let user = ReturnUser(userName);
   let userIndex = users.indexOf(user);
 console.log('user :>> ', user);
 console.log('userIndex :>> ', userIndex);
 console.log('users :>> ', users);
 
-const createUser=(event)=>{
+const UpdateUser=(event)=>{
   event.preventDefault();
   const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
   users[userIndex] = nUser;
   console.log('user :>> ', nUser);
+  navigate("/");
 }
 return(
 <>
@@ -115,7 +115,7 @@ return(
       <input type="number" value={streetNum} placeholder="street number" onChange={(e)=> setStreetNum(e.target.value)}
       />
     </label>
-    <button onClick={(event)=> createUser(event)}>Update user</button>
+    <button onClick={(event)=> UpdateUser(event)}>Update user</button>
   </form>
   <div className="login">
     <p>or</p>
