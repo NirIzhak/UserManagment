@@ -28,6 +28,9 @@ const UserContextProvider = ({ children }) => {
       console.error(err);
     }
   };
+  useEffect(() => {
+    LoadUsers();
+  }, []);
 
   const CheckUserRegisterDetails = (user, passwordAgain) => {
     if (!isValidEmail(user.email)) {
@@ -55,12 +58,6 @@ const UserContextProvider = ({ children }) => {
   };
   
 const ReturnUser=(userName)=>{return users.find((u) => u.userName == userName);}
-
-
-
-
-
-
 
 // check userName charts
 const isValidUserName = (userName) => {
@@ -112,49 +109,6 @@ const checkIfEmpty = (user, passwordAgain) => {
     return false;
   else return true;
 };
-
-
-
-
-
-//   if(userName == "admin" && password == "admin1234admin") navigate(`/manager/${userName}`);
-//   else if (user != undefined && userName != "admin")
-//     navigate(`/profile/${userName}`);
-
-//   else alert("This Account Is Not Registerd")
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  useEffect(() => {
-    LoadUsers();
-  }, []);
 
   const value = {
     users,
