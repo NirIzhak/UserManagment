@@ -45,8 +45,6 @@ const createUser=(event)=>{
   const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
   users[userIndex] = nUser;
   console.log('user :>> ', nUser);
-  //SetUsers((Prev)=>[...Prev,user]);
-  
 }
 return(
 <>
@@ -117,7 +115,7 @@ return(
       <input type="number" value={streetNum} placeholder="street number" onChange={(e)=> setStreetNum(e.target.value)}
       />
     </label>
-    <button onClick={()=> createUser()}>Update user</button>
+    <button onClick={(event)=> createUser(event)}>Update user</button>
   </form>
   <div className="login">
     <p>or</p>
