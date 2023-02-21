@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
@@ -8,10 +7,9 @@ const Login = () => {
   // user input --> userName, password
 
   const {userName,setUserName,setPassword} = useContext(UserContext);
-
+  
   return (
     <>
-      <h1>LogIn</h1>
       <form>
         <label>
           UserName:
