@@ -1,5 +1,6 @@
 import User from "./User";
 
+
 export default class Administrator extends User {
 
     constructor(props) {
@@ -7,6 +8,10 @@ export default class Administrator extends User {
         this.userName = 'admin',
         this.password = 'admin1234admin'
     }
+
+
 }
+
+
 
 
