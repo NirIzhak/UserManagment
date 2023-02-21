@@ -1,14 +1,28 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import User from "../classes/User";
 import { UserContext } from "../context/UserContext";
 
 const Admin = ()=>{
 
-const {users} = useContext(UserContext);
+const {users,ReturnUser} = useContext(UserContext);
 const {userName} = useParams();
 const navigate = useNavigate();
 
+const UpdateUser=(event)=>{
+    event.preventDefault();
+    const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
+    users[userIndex] = nUser;
+    console.log('user :>> ', nUser);
+    navigate("/");
+}
+
+const DeleteUser=(event,userName)=>{
+    event.preventDefault();
+    const user = ReturnUser(userName);
+    
+}
 
 return(
 <>
@@ -33,6 +47,8 @@ return(
                 <td>{user.date}</td>
                 <td>{user.email}</td>
                 <td>{user.street} {user.streetNum} {user.city}</td>
+                <button onClick={(event)=>UpdateUser(event)}>Edit</button>
+                <button onClick={(event)=>DeleteUser(event,user.userName)}>Delete</button>
             </tr>
             )}
             )}
