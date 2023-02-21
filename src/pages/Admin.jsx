@@ -1,16 +1,18 @@
 import { useContext } from "react";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 const Admin = ()=>{
 
-const {users,SetUsers} = useContext(UserContext);
+const {users} = useContext(UserContext);
+const {userName} = useParams();
 const navigate = useNavigate();
 
 
 return(
 <>
-    <h1>Hi !</h1>
+    <h1>Hi {userName} !</h1>
     <table>
         <thead style={{textAlign:"center"}}>
             <tr>
