@@ -52,7 +52,7 @@ const UserContextProvider = ({ children }) => {
     }
   };
   
-
+const ReturnUser=(userName)=>{return users.find((u) => u.userName == userName);}
 
 
 
@@ -164,6 +164,7 @@ navigate(`/profile/${userName}`);
     users,
     SetUsers,
     CheckUserRegisterDetails,
+    ReturnUser,
     CheckUserLogIn,
     userName, 
     setUserName,
