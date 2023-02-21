@@ -6,7 +6,25 @@ const Login = () => {
   const navigate = useNavigate();
   // user input --> userName, password
 
-  const {userName,setUserName,setPassword} = useContext(UserContext);
+  const {userName,password,setUserName,setPassword,ReturnUser} = useContext(UserContext);
+
+  //check user login details
+  const CheckUserLogIn = (userName,password) => {
+
+  const user = ReturnUser(userName);
+
+  if(userName == "admin" && password == "admin1234admin"){
+    navigate(`/admin/${userName}`);
+  }
+  else if(user.userName == userName && user.password == password){
+    navigate(`/profile/${userName}`);
+  }
+  else if(user.userName != userName && user.password == password)
+  {
+    alert("Username and password are incorrect");
+  }
+  
+  }
   
   return (
     <>
@@ -27,7 +45,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button onClick={()=>navigate(`/profile/${userName}`)}>Log in</button>
+        <button onClick={()=>CheckUserLogIn(userName,password)}>Log in</button>
       </form>
       <div className="register">
         <p>or</p>
