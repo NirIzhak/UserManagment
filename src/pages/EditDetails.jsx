@@ -70,7 +70,7 @@ return(
     <label>
       {" "}
       Upload Image:
-      <input type="file" value={image} accept="image/png, image/jpeg" onChange={(e)=>
+      <input type="file" accept="image/png, image/jpeg" onChange={(e)=>
       setImage(URL.createObjectURL(e.target.files[0]))}
       />
     </label>
