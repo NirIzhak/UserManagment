@@ -1,28 +1,13 @@
 import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 
 const Admin = ()=>{
 
-    const {users} = useContext(UserContext);
+    const {users} = useContext(UserContext); 
     
     return(
-        <table>
-          <tr>
-            <th>a</th>
-            <th>a</th>
-            <th>a</th>
-            <th>a</th>
-            <th>a</th>
-          </tr>
-          <tr>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-          </tr>
-            
-        </table>
+        <h1>Admin Page</h1>
     )
 }
 export default Admin;
