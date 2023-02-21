@@ -12,15 +12,15 @@ const Login = () => {
   const CheckUserLogIn = (userName,password) => {
 
   const user = ReturnUser(userName);
-
+  console.log('user :>> ', user);
+  
   if(userName == "admin" && password == "admin1234admin"){
     navigate(`/admin/${userName}`);
   }
   else if(user.userName == userName && user.password == password){
     navigate(`/profile/${userName}`);
   }
-  else if(user.userName != userName && user.password == password)
-  {
+  else if(user == undefined){
     alert("Username and password are incorrect");
   }
   
