@@ -1,8 +1,10 @@
 import { createContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext();
 
 const UserContextProvider = ({ children }) => {
+
   const [users, SetUsers] = useState([]);
 
   const [userName, setUserName] = useState("");
@@ -53,8 +55,6 @@ const UserContextProvider = ({ children }) => {
   };
   
 const ReturnUser=(userName)=>{return users.find((u) => u.userName == userName);}
-
-
 
 
 
@@ -115,11 +115,7 @@ const checkIfEmpty = (user, passwordAgain) => {
 
 
 
-//check user login details
-const CheckUserLogIn = (userName) => {
-navigate(`/profile/${userName}`);
 
-}
 
 //   if(userName == "admin" && password == "admin1234admin") navigate(`/manager/${userName}`);
 //   else if (user != undefined && userName != "admin")
@@ -165,7 +161,6 @@ navigate(`/profile/${userName}`);
     SetUsers,
     CheckUserRegisterDetails,
     ReturnUser,
-    CheckUserLogIn,
     userName, 
     setUserName,
     password, 
