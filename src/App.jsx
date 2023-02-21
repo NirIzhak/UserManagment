@@ -8,8 +8,8 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import "./styles/App.css";
 
-const nUser = new Administrator();
-console.log('nUser :>> ', nUser);
+const admin = new Administrator();
+console.log('admin :>> ', admin);
 const App = () => {
 
   return (
