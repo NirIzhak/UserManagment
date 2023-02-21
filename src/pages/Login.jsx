@@ -18,7 +18,6 @@ const Login = () => {
   if(userName == "admin" && password == "admin1234admin"){
     const admin = new Administrator();
     console.log('admin :>> ', admin);
-    isValidUserName(admin.userName) ? navigate(`/admin/${admin.userName}`): SetUsers([...users, {...admin}])
     navigate(`/admin/${admin.userName}`);
   }
   else if(user.userName == userName && user.password == password){
