@@ -48,7 +48,7 @@ const UpdateUser=(event)=>{
 }
 return(
 <>
-  <form className="edit-form" onSubmit={createUser}>
+  <form className="edit-form" onSubmit={UpdateUser}>
     <label>
       {" "}
       UserName:
