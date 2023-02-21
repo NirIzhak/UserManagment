@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UserContextProvider from "./context/UserContext";
+import Administrator from "./classes/Administrator";
+import UserContextProvider, { UserContext } from "./context/UserContext";
 import Admin from "./pages/Admin";
 import EditDetails from "./pages/EditDetails";
 import Login from "./pages/Login";
@@ -7,7 +8,10 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import "./styles/App.css";
 
+const nUser = new Administrator();
+console.log('nUser :>> ', nUser);
 const App = () => {
+
   return (
     <UserContextProvider>
       <BrowserRouter>
