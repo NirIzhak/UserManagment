@@ -10,18 +10,22 @@ const {users,ReturnUser} = useContext(UserContext);
 const {userName} = useParams();
 const navigate = useNavigate();
 
-const UpdateUser=(event)=>{
+const UpdateUser=(event,userName)=>{
     event.preventDefault();
-    const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
+   /* const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
     users[userIndex] = nUser;
-    console.log('user :>> ', nUser);
-    navigate("/");
+    console.log('user :>> ', nUser);*/
+    const user = ReturnUser(userName);
+    console.log('object :>> ', user);
+    navigate(`/editDetails/${user.userName}`);
 }
 
 const DeleteUser=(event,userName)=>{
     event.preventDefault();
     const user = ReturnUser(userName);
-    
+    let userIndex = users.indexOf(user);
+    users.splice(userIndex,1);
+    console.log('users :>> ', users);
 }
 
 return(
@@ -47,8 +51,10 @@ return(
                 <td>{user.date}</td>
                 <td>{user.email}</td>
                 <td>{user.street} {user.streetNum} {user.city}</td>
-                <button onClick={(event)=>UpdateUser(event)}>Edit</button>
+                <div>
+                <button onClick={(event)=>UpdateUser(event,user.userName)}>Edit</button>
                 <button onClick={(event)=>DeleteUser(event,user.userName)}>Delete</button>
+                </div>
             </tr>
             )}
             )}
