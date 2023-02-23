@@ -9,7 +9,8 @@ import Register from "./pages/Register";
 import "./styles/App.css";
 
 
-
+/*const admin = new Administrator();
+console.log('admin :>> ', admin);*/
 const App = () => {
 
   return (
