@@ -1,24 +1,21 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Administrator from "../classes/Administrator";
 import { UserContext } from "../context/UserContext";
 
 const Login = () => {
   const navigate = useNavigate();
   // user input --> userName, password
 
-  const {users,userName,password,setUserName,setPassword,SetUsers,ReturnUser,isValidUserName} = useContext(UserContext);
+  const {userName,password,setUserName,setPassword,ReturnUser} = useContext(UserContext);
 
   //check user login details
   const CheckUserLogIn = (userName,password) => {
 
   const user = ReturnUser(userName);
   console.log('user :>> ', user);
-  
+  alert("hi");
   if(userName == "admin" && password == "admin1234admin"){
-    const admin = new Administrator();
-    console.log('admin :>> ', admin);
-    navigate(`/admin/${admin.userName}`);
+    navigate(`/admin/${userName}`);
   }
   else if(user.userName == userName && user.password == password){
     navigate(`/profile/${userName}`);
