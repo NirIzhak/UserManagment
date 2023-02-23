@@ -41,9 +41,10 @@ console.log('users :>> ', users);
 
 const UpdateUser=(event)=>{
   event.preventDefault();
+  console.log('user :>> ', user);
   const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
   users[userIndex] = nUser;
-  console.log('user :>> ', nUser);
+  console.log('nUser :>> ', nUser);
   navigate("/");
 }
 return(
