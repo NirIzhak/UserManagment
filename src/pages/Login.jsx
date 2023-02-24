@@ -6,28 +6,25 @@ const Login = () => {
   const navigate = useNavigate();
   // user input --> userName, password
 
-  const {userName,password,setUserName,setPassword,ReturnUser} = useContext(UserContext);
+  const { userName, password, setUserName, setPassword, ReturnUser } =
+    useContext(UserContext);
 
   //check user login details
-  const CheckUserLogIn = (userName,password) => {
+  const CheckUserLogIn = (userName, password) => {
+    const user = ReturnUser(userName);
 
-  const user = ReturnUser(userName);
+    if (userName == "admin" && password == "admin1234admin") {
+      navigate(`/admin`);
+    } else if (user.userName == userName && user.password == password) {
+      navigate(`/profile/${userName}`);
+    } else {
+      alert("Username and password are incorrect");
+    }
+  };
 
-  if(userName == "admin" && password == "admin1234admin"){
-    navigate(`/admin`);
-  }
-  else if(user.userName == userName && user.password == password){
-    navigate(`/profile/${userName}`);
-  }
-  else{
-    alert("Username and password are incorrect");
-  }
-  
-  }
-  
   return (
     <>
-    <h1>Login Page</h1>
+      <h1>Login Page</h1>
       <form>
         <label>
           UserName:
@@ -45,7 +42,9 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button onClick={()=>CheckUserLogIn(userName,password)}>Log in</button>
+        <button onClick={() => CheckUserLogIn(userName, password)}>
+          Log in
+        </button>
       </form>
       <div className="register">
         <p>or</p>
