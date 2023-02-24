@@ -34,18 +34,17 @@ streetNum
 const {userName} = useParams();
 const navigate = useNavigate();
 
-
 const UpdateUser=(event)=>{
   event.preventDefault();
   let user = ReturnUser(userName);
+  console.log('user :>> ', user);
   let userIndex = users.indexOf(user);
-  const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
-  console.log('nUser :>> ', nUser);
-  users[userIndex] = nUser;
+  users[userIndex] = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
   navigate("/");
 }
 return(
 <>
+<h1>EditDetails Page</h1>
   <form className="edit-form" onSubmit={UpdateUser}>
     <label>
       {" "}
