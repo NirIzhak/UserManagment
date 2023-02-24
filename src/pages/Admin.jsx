@@ -8,8 +8,8 @@ const {users,ReturnUser} = useContext(UserContext);
 const navigate = useNavigate();
 
 
-const UpdateUser=(event,userName)=>{
-    event.preventDefault();
+const UpdateUser=(userName)=>{
+    //event.preventDefault();
     const user = ReturnUser(userName);
     console.log('object :>> ', user.userName);
     navigate(`/editDetails/${user.userName}`);
@@ -45,7 +45,7 @@ return(
                 <td>{user.date}</td>
                 <td>{user.email}</td>
                 <td>{user.street} {user.streetNum} {user.city}</td>
-                <td><button onClick={(event)=>UpdateUser(event,user.userName)}>Edit</button></td> 
+                <td><button onClick={()=>UpdateUser(user.userName)}>Edit</button></td> 
                 <td><button onClick={(event)=>DeleteUser(event,user.userName)}>Delete</button></td> 
             </tr>
             )}
