@@ -11,7 +11,7 @@ const navigate = useNavigate();
 const UpdateUser=(event,userName)=>{
     event.preventDefault();
     const user = ReturnUser(userName);
-    console.log('object :>> ', user);
+    console.log('object :>> ', user.userName);
     navigate(`/editDetails/${user.userName}`);
 }
 
@@ -24,7 +24,7 @@ const DeleteUser=(event,userName)=>{
 
 return(
 <>
-    <h1>Hi admin !</h1>
+    <h1>Welcome To Admin Page!</h1>
     <table>
         <thead style={{textAlign:"center"}}>
             <tr>
