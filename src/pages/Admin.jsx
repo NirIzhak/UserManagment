@@ -9,10 +9,8 @@ const navigate = useNavigate();
 
 
 const UpdateUser=(userName)=>{
-    //event.preventDefault();
-    const user = ReturnUser(userName);
-    console.log('object :>> ', user.userName);
-    navigate(`/editDetails/${user.userName}`);
+    console.log('object :>> ', userName);
+    navigate(`/editDetails/${userName}`);
 }
 
 const DeleteUser=(event,userName)=>{
