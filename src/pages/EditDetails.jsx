@@ -33,18 +33,15 @@ streetNum
 } = useContext(UserContext);
 const {userName} = useParams();
 const navigate = useNavigate();
-let user = ReturnUser(userName);
-  let userIndex = users.indexOf(user);
-console.log('user :>> ', user);
-console.log('userIndex :>> ', userIndex);
-console.log('users :>> ', users);
+
 
 const UpdateUser=(event)=>{
   event.preventDefault();
-  console.log('user :>> ', user);
+  let user = ReturnUser(userName);
+  let userIndex = users.indexOf(user);
   const nUser = new User(userName, password, image, firstName, lastName, email, date, city, street, streetNum);
-  users[userIndex] = nUser;
   console.log('nUser :>> ', nUser);
+  users[userIndex] = nUser;
   navigate("/");
 }
 return(
@@ -59,13 +56,13 @@ return(
     <label>
       {" "}
       Password:
-      <input type="password" value={password} placeholder="password" onChange={(e)=> setPassword(e.target.value)}
+      <input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)}
       />
     </label>
     <label>
       {" "}
       Password Again:
-      <input type="password" value={passwordAgain} placeholder="password Again" onChange={(e)=> setPasswordAgain(e.target.value)}
+      <input type="password" placeholder="password Again" onChange={(e)=> setPasswordAgain(e.target.value)}
       />
     </label>
     <label>
