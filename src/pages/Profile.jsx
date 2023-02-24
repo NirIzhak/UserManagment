@@ -24,7 +24,8 @@ const Profile = ()=>{
     return(
         user !== undefined ?
         <>
-        <form id='profile'>
+        <h1>Profile Page</h1>
+        <div id='profile'>
           <div id='profileImage'><img src={user.image} style={{width:'10em'}}/></div>
           <p>User Name: <span>{userName}</span></p>
           <p>Full Name: <span>{user.firstName} {user.lastName}</span></p>
@@ -34,7 +35,7 @@ const Profile = ()=>{
           <button id='edit' onClick={()=>EditDetails()}>Edit</button>
           <button id='report' onClick={()=>reportHazard()}>Report</button>
           <button id='LogOut' onClick={()=>LogOut()}>Log out</button>
-        </form>
+        </div>
     </>
     :
     LogOut()
