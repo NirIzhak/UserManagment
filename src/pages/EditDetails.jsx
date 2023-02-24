@@ -55,13 +55,13 @@ return(
     <label>
       {" "}
       Password:
-      <input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)}
+      <input type="password" value={password} placeholder="password" onChange={(e)=> setPassword(e.target.value)}
       />
     </label>
     <label>
       {" "}
       Password Again:
-      <input type="password" placeholder="password Again" onChange={(e)=> setPasswordAgain(e.target.value)}
+      <input type="password" value={passwordAgain}placeholder="password Again" onChange={(e)=> setPasswordAgain(e.target.value)}
       />
     </label>
     <label>
