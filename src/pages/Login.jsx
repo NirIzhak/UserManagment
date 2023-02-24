@@ -23,11 +23,10 @@ const Login = () => {
   };
 
   return (
-    <>
-      <h1>Login Page</h1>
+    <div className="login">
       <form>
         <label>
-          UserName:
+          User Name:
           <input
             type="text"
             placeholder="UserName"
@@ -56,7 +55,7 @@ const Login = () => {
           Register Now
         </button>
       </div>
-    </>
+    </div>
   );
 };
 export default Login;

@@ -33,8 +33,8 @@ const Register = () => {
   } = useContext(UserContext);
 
   return (
-    <>
-      <h1>Register Page</h1>
+    <div className="register-container">
+      <h1>Fill All The Cells</h1>
       <form className="register-form">
         <label>
           {" "}
@@ -154,8 +154,8 @@ const Register = () => {
           Create User
         </button>
       </form>
-      <div className="login">
-        <p>or</p>
+      <div className="register-login">
+        <p>if you already have account, just press on Log In Button </p>
         <button
           onClick={() => {
             navigate("/");
@@ -164,7 +164,7 @@ const Register = () => {
           Log In
         </button>
       </div>
-    </>
+    </div>
   );
 };
 export default Register;

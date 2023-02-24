@@ -1,0 +1,148 @@
+body {
+    background-color: rgb(127, 234, 255);
+    height: 100vh;
+}
+
+.login form,
+.login .register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.login {
+    background-color: rgba(255, 255, 255, 0.555);
+    border-radius: 24px;
+    width: 90%;
+    margin: auto;
+    margin-top: 25vh;
+    padding: 10px;
+}
+.login form label{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-block: 5px;
+}
+
+.login form label input{
+    width: 50%;
+    text-align: center;
+    border-radius: 12px;
+}
+.login form label input, .login form label {
+    font-size: 24px;
+}
+
+.login form button, .register button{
+    width: 50%;
+    margin: auto;
+    margin-block: 20px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    background-color: bisque;
+}
+
+.register p{
+    text-align: center;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.profile-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.568);
+    padding: 15px;
+    border-radius: 24px;
+    margin-top: 10vh;
+}
+
+#profile{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    text-align: left;
+    margin-block: 10px;
+}
+
+.profile-buttons{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#profile #profileImage{
+    margin: auto;
+    margin-block: 15px;
+}
+
+#profile button{
+    margin: auto;
+    width: 50%;
+    margin-block: 5px;
+    font-size: 16px;
+    color: black;
+    border: none;
+    height: 30px;
+    border-radius: 12px;
+    background-color: bisque;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 20px;
+}
+.register-form label{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-block: 5px;
+}
+
+.register-form input{
+    font-size: 14px;
+    text-align: center;
+    margin: auto;
+}
+
+.register-container{
+    width: 90%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.562);
+    padding: 10px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.register-form button, .register-login button{
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+    border: none;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 12px;
+    color: black;
+    background-color: antiquewhite;
+}
+
+.register-login p{
+    font-size: 18px;
+    text-decoration: underline;
+}
