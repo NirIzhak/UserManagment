@@ -12,10 +12,9 @@ const Login = () => {
   const CheckUserLogIn = (userName,password) => {
 
   const user = ReturnUser(userName);
-  console.log('user :>> ', user);
-  alert("hi");
+
   if(userName == "admin" && password == "admin1234admin"){
-    navigate(`/admin/${userName}`);
+    navigate(`/admin`);
   }
   else if(user.userName == userName && user.password == password){
     navigate(`/profile/${userName}`);
