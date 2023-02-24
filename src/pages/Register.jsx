@@ -37,7 +37,7 @@ const {
 
 return (
 <>
-  <h1>Register</h1>
+  <h1>Register Page</h1>
   <form className="register-form">
     <label>
       {" "}
