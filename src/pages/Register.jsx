@@ -32,7 +32,6 @@ const {
   streetNum
 
 } = useContext(UserContext);
-console.log('users :>> ', users);
 // user details
 
 
