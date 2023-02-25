@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
@@ -20,6 +21,7 @@ const Admin = () => {
 
   return (
     <>
+    <Link to='/'>Log out</Link>
       <h1>Welcome To Admin Page!</h1>
       <table>
         <thead>
@@ -29,6 +31,7 @@ const Admin = () => {
             <th>Birth Date</th>
             <th>Email</th>
             <th>Address</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -44,28 +47,21 @@ const Admin = () => {
                 <td>
                   {user.street} {user.streetNum} {user.city}
                 </td>
-                <td className="table-btn">
-                <button onClick={() => UpdateUser(user.userName)}>
+                <td>
+                  <form className="table-btn">
+                  <button onClick={() => UpdateUser(user.userName)}>
                     Edit
                   </button>
                   <button onClick={(event) => DeleteUser(event, user.userName)}>
                     Delete
                   </button>
+                  </form>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <div>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Log Out
-        </button>
-      </div>
     </>
   );
 };
