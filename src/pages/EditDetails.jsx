@@ -4,7 +4,7 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import User from "../classes/User";
 import { useEffect } from "react";
-import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 const EditDetails = () => {
   const {
@@ -76,6 +76,7 @@ const EditDetails = () => {
   
   return (
     <>
+    <Link to='/'></Link>
       <h1>EditDetails Page</h1>
       <form className="edit-form" onSubmit={UpdateUser}>
         <label>
@@ -187,8 +188,6 @@ const EditDetails = () => {
           />
         </label>
         <button onClick={(event) => UpdateUser(event)}>Save</button>
-        <p>or</p>
-        <button onClick={() => {navigate("/");}}>Log In</button>
       </form>
     </>
   );
