@@ -46,7 +46,7 @@ const Login = () => {
         </button>
       </form>
       <div className="register">
-        <p>or</p>
+        <p><strong>or</strong></p>
         <button
           onClick={() => {
             navigate("/register");
