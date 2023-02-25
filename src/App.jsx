@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Link } from "react-router-dom";
 import UserContextProvider from "./context/UserContext";
 import Admin from "./pages/Admin";
 import EditDetails from "./pages/EditDetails";
@@ -11,19 +11,26 @@ import "./styles/App.css";
 
 const App = () => {
 
-  return (
-    <UserContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/profile/:userName" element={<Profile />}></Route>
-          <Route path="/editDetails/:userName" element={<EditDetails />}></Route>
-          <Route path="/admin" element={<Admin />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </UserContextProvider>
-  );
+return (
+<UserContextProvider>
+  <BrowserRouter>
+    <nav>
+      <ul>
+        <li>
+          <Link to='/'>Login</Link>
+        </li>
+      </ul>
+    </nav>
+    <Routes>
+      <Route path="/" element={<Login />}></Route>
+      <Route path="/register" element={<Register />}></Route>
+      <Route path="/profile/:userName" element={<Profile />}></Route>
+      <Route path="/editDetails/:userName" element={<EditDetails />}></Route>
+      <Route path="/admin" element={<Admin />}></Route>
+    </Routes>
+  </BrowserRouter>
+</UserContextProvider>
+);
 };
 
 export default App;
