@@ -4,6 +4,7 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import User from "../classes/User";
 import { useEffect } from "react";
+import Button from 'react-bootstrap/Button';
 
 const EditDetails = () => {
   const {
@@ -21,7 +22,6 @@ const EditDetails = () => {
     setStreet,
     setStreetNum,
     password,
-    passwordAgain,
     image,
     firstName,
     lastName,
@@ -100,11 +100,11 @@ const EditDetails = () => {
         </label>
         <label>
           {" "}
-          Password Again:
+          Confirm Password:
           <input
             type="password"
             value={password}
-            placeholder="password Again"
+            placeholder=" Confirm password"
             onChange={(e) => setPasswordAgain(e.target.value)}
           />
         </label>
@@ -187,17 +187,9 @@ const EditDetails = () => {
           />
         </label>
         <button onClick={(event) => UpdateUser(event)}>Save</button>
-      </form>
-      <div className="login">
         <p>or</p>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Log In
-        </button>
-      </div>
+        <button onClick={() => {navigate("/");}}>Log In</button>
+      </form>
     </>
   );
 };
