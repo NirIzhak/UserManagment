@@ -14,13 +14,6 @@ const App = () => {
 return (
 <UserContextProvider>
   <BrowserRouter>
-    <nav>
-      <ul>
-        <li>
-          <Link to='/'>Login</Link>
-        </li>
-      </ul>
-    </nav>
     <Routes>
       <Route path="/" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
