@@ -1,8 +1,27 @@
-body {
-    background-color: rgb(127, 234, 255);
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(127, 234, 255);
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("https://img.freepik.com/free-vector/gray-triangle-shaped-tile-vector_53876-161415.jpg?w=360&t=st=1677338926~exp=1677339526~hmac=8a0e2936a9a6600247966487082f61316c50e1f1fd202070e37a336768fe45fd");
+    font-family: 'Quicksand', sans-serif;
+}
+
+button{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #c4ceff;
+    border-radius: 5px;
+    color: black;
+}
 .login form,
 .login .register {
     display: flex;
@@ -13,7 +32,7 @@ body {
 
 .login {
     background-color: rgba(255, 255, 255, 0.555);
-    border-radius: 24px;
+    border-radius: 5px;
     width: 90%;
     margin: auto;
     margin-top: 25vh;
@@ -24,10 +43,14 @@ body {
     justify-content: space-between;
     text-align: left;
     width: 90%;
-    margin: auto;
     margin-block: 5px;
 }
 
+.login form input{
+    margin-top: 5px;
+    padding: 0.5em;
+    border-color: transparent;
+}
 .login form label input{
     width: 50%;
     text-align: center;
@@ -38,25 +61,21 @@ body {
 }
 
 .login form button, .register button{
-    width: 50%;
+    width: 90%;
     margin: auto;
     margin-block: 20px;
     height: 40px;
     font-size: 20px;
     border: none;
-    border-radius: 12px;
-    color: black;
-    background-color: bisque;
 }
 
 .register p{
     text-align: center;
     font-size: 24px;
-    text-decoration: underline;
 }
 
 .profile-container{
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +83,6 @@ body {
     margin: auto;
     background-color: rgba(255, 255, 255, 0.568);
     padding: 15px;
-    border-radius: 24px;
     margin-top: 10vh;
 }
 
@@ -81,7 +99,8 @@ body {
 .profile-buttons{
     margin-top: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1em;
 }
 
 #profile #profileImage{
@@ -94,11 +113,8 @@ body {
     width: 50%;
     margin-block: 5px;
     font-size: 16px;
-    color: black;
     border: none;
     height: 30px;
-    border-radius: 12px;
-    background-color: bisque;
 }
 
 .register-form{
@@ -137,12 +153,50 @@ body {
     border: none;
     height: 40px;
     font-size: 20px;
-    border-radius: 12px;
-    color: black;
-    background-color: antiquewhite;
 }
 
 .register-login p{
     font-size: 18px;
     text-decoration: underline;
 }
+
+h1{
+    text-align: center;
+    margin-top: 1em;
+}
+.edit-form{
+    display: grid;
+    justify-content: center;
+    line-height: 2em;
+}
+.edit-form input{
+    outline: 0;
+    border-width: 0 0 2px;
+    display: grid;
+    padding: 0.2em; 
+    width: 100%; 
+}
+.edit-form label input:focus{
+    border-bottom: #fb14cc;
+    border-width: 0 0 3px;
+}
+.edit-form button{
+    margin-top: 1em;
+    border: transparent;
+    padding: 0.5em;
+    background-color: #c4ceff;
+}
+
+
+td,th{
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+.table-btn button{
+    text-align: center;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+
+
