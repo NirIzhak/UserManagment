@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import User from "../classes/User";
 import { UserContext } from "../context/UserContext";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -56,10 +57,10 @@ const Register = () => {
         </label>
         <label>
           {" "}
-          Password Again:
+          Confirm Password:
           <input
             type="password"
-            placeholder="password Again"
+            placeholder="Confirm Password"
             onChange={(e) => setPasswordAgain(e.target.value)}
           />
         </label>
@@ -155,14 +156,7 @@ const Register = () => {
         </button>
       </form>
       <div className="register-login">
-        <p>if you already have account, just press on Log In Button </p>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Log In
-        </button>
+        <p>if you already have account, just press <Link to='/'>Login</Link></p>
       </div>
     </div>
   );
