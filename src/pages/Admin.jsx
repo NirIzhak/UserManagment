@@ -22,7 +22,7 @@ const Admin = () => {
     <>
       <h1>Welcome To Admin Page!</h1>
       <table>
-        <thead style={{ textAlign: "center" }}>
+        <thead>
           <tr>
             <th>Picture</th>
             <th>User Name</th>
@@ -31,7 +31,7 @@ const Admin = () => {
             <th>Address</th>
           </tr>
         </thead>
-        <tbody style={{ textAlign: "center" }}>
+        <tbody>
           {users.map((user, index) => {
             return (
               <tr key={index}>
@@ -44,12 +44,10 @@ const Admin = () => {
                 <td>
                   {user.street} {user.streetNum} {user.city}
                 </td>
-                <td>
-                  <button onClick={() => UpdateUser(user.userName)}>
+                <td className="table-btn">
+                <button onClick={() => UpdateUser(user.userName)}>
                     Edit
                   </button>
-                </td>
-                <td>
                   <button onClick={(event) => DeleteUser(event, user.userName)}>
                     Delete
                   </button>
