@@ -32,7 +32,7 @@ const Register = () => {
     LoadCities();
   }, []);
 
-  
+
   const navigate = useNavigate();
   const {
     CheckUserRegisterDetails,
@@ -63,7 +63,6 @@ const Register = () => {
   return (
     <>
       <div className="register-container">
-        {console.log(cities)}
         <h1>Fill All The Cells</h1>
         <form className="register-form">
           <label>
