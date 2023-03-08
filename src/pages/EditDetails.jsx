@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const EditDetails = () => {
+  // all user details
   const {
     users,
     ReturnUser,
@@ -32,15 +33,22 @@ const EditDetails = () => {
     streetNum,
   } = useContext(UserContext);
 
+  // get userName from profile
   const { userName } = useParams();
+
   const navigate = useNavigate();
 
   // update user details
   const UpdateUser = (event) => {
     event.preventDefault();
+    
+    // get user details from the current userName
     let user = ReturnUser(userName);
-    console.log("user :>> ", user);
+
+    // get user index in users
     let userIndex = users.indexOf(user);
+
+    // change the current user details
     users[userIndex] = new User(
       userName,
       password,

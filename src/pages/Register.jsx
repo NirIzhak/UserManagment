@@ -15,19 +15,24 @@ const Register = () => {
   const inputRef = useRef();
   const [inputValue, setInputValue] = useState("");
 
-  // load all cities
+
+  // load all cities names
   const LoadCities = async () => {
+    // the api is for all cities data
     try {
       let res = await fetch(
         "https://data.gov.il/api/3/action/datastore_search?resource_id=5c78e9fa-c2e2-4771-93ff-7f400a12f7ba&limit=1267"
       );
       let data = await res.json();
+
+      // get only cities names
       setCities(data.result.records.map((c) => c.שם_ישוב));
     } catch (err) {
       console.log(err);
     }
   };
 
+  // load all cities on start
   useEffect(() => {
     LoadCities();
   }, []);

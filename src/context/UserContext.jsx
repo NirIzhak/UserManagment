@@ -36,10 +36,14 @@ const UserContextProvider = ({ children }) => {
 
   // check user Log In Details
   const CheckUserRegisterDetails = (user, passwordAgain) => {
+    // if email is been used already in another account
     if (!isValidEmail(user.email)) {
       alert("Email already used");
       return false;
-    } else if (
+    }
+    
+    // if one of user details is not valid etc: userName to short or missing spaciel char
+    else if (
       isValidUserName(user.userName) &&
       isValidDate(user.date) &&
       isValidEmail(user.email) &&
@@ -48,7 +52,10 @@ const UserContextProvider = ({ children }) => {
       SetUsers([...users, { ...user }]);
       alert("Register Succesfull");
       return true;
-    } else {
+    }
+    
+    // not all details is valid, the user isn't register
+    else {
       alert("Check Your Details Again...");
       return false;
     }

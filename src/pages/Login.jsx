@@ -3,27 +3,35 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 const Login = () => {
+
   const navigate = useNavigate();
   // user input --> userName, password
 
-  const { userName, password, setUserName, setPassword, ReturnUser } =
-    useContext(UserContext);
+  const { userName, password, setUserName, setPassword, ReturnUser } = useContext(UserContext);
 
   //check user login details
   const CheckUserLogIn = (userName, password) => {
     const user = ReturnUser(userName);
 
+    // if the admin sign in
     if (userName == "admin" && password == "admin1234admin") {
       navigate(`/admin`);
-    } else if (user.userName == userName && user.password == password) {
+    }
+    
+    // if the user sign in
+    else if (user.userName == userName && user.password == password) {
       navigate(`/profile/${userName}`);
-    } else {
+    }
+    
+    // if the details isn't in DB
+    else {
       alert("Username and password are incorrect");
     }
   };
 
   return (
     <div className="login">
+      <h1>Sign In</h1>
       <form>
         <label>
           User Name

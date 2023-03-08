@@ -9,16 +9,23 @@ const Profile = () => {
   const { userName } = useParams();
   let user = ReturnUser(userName);
 
+  
+  // go to edit details page
   const EditDetails = () => {
     navigate(`/editDetails/${userName}`);
   };
+
+  // log out from current user
   const LogOut = () => {
     navigate("/");
   };
+
+  // report on user
   const reportHazard = () => {
-    console.log("report");
+    alert("user reported");
   };
 
+  // if the user details are currect, show user profile, else return to sign in
   return user !== undefined ? (
     <div className="profile-container">
       <h1>Hey {user.firstName}!</h1>

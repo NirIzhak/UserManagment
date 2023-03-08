@@ -197,5 +197,8 @@ td,th{
     margin-top: 0.5em;
 }
 
+table{
+    text-align: center;
+}
 
 
